@@ -1,0 +1,40 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyles = createGlobalStyle`
+    /* CSS Variables from the theme */
+    :root {
+        /* Colors */
+        --color-primary: #FF004D;
+        --color-secondary: #29ADFF;
+        --color-tertiary: #00E436;
+        --color-background: #FFCCAA;
+        --color-text: #000000;
+        --color-white: #FFF1E8;
+        --color-gray: #C2C3C7;
+
+        /* Typography */
+        --text-sm: 0.85rem;
+        --text-base: 1re;
+        --text-md: 1.25rem;
+        --text-lg: 1.5rem;
+
+        /* Spacing */
+        --space-xs: 0.25rem;
+        --space-sm: 0.5rem;
+        --space-base: 1rem;
+        --space-md: 1.5rem;
+        --space-lg: 2rem;
+
+        /* Border radius */
+        --radius-sm: 0.6rem;
+        --radius-base: 1rem;
+        --radius-lg: 1.4rem;
+    }
+
+    body {
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+`
+
+export default GlobalStyles;
