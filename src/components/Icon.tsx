@@ -14,7 +14,7 @@ interface IconProps {
 export default function Icon({
     name,
     color = '',
-    size = '24px',
+    size = '36px',
     className = '' 
   }: IconProps) {
     const [svgContent, setSvgContent] = useState<string>('');

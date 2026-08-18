@@ -8,6 +8,7 @@ const Container = styled.span`
     border-radius: var(--radius-base);
     padding: var(--space-xs);
     background-color: var(--color-background);
+    box-shadow: 1px 1px var(--color-primary);
 `
 
 export default function TechCard({ name }: { name: string }) {

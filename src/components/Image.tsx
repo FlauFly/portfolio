@@ -16,11 +16,11 @@ const imageModules = import.meta.glob('/src/assets/images/*.{png,jpg,jpeg,webp,s
 }) as Record<string, string>;
 
 export default function Image({ 
-        name, 
-        alt = '',
-        width = '100%',
-        height = 'auto', 
-        className = '' 
+      name, 
+      alt = '',
+      width = '100%',
+      height = 'auto', 
+      className = '' 
     }: ImageProps) {
   const [src, setSrc] = useState<string>('');
 
@@ -43,8 +43,10 @@ export default function Image({
     <img 
         src={src} 
         alt={alt}
-        width={width}
-        height={height}
+        style={{
+          width: width,
+          height: height
+        }}
         className={className} 
     /> : 
     null
