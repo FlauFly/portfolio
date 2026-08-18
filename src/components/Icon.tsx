@@ -11,12 +11,12 @@ interface IconProps {
   className?: string;
 }
 
-export const Icon = ({
+export default function Icon({
     name,
-    color = 'currentColor',
+    color = '',
     size = '24px',
     className = '' 
-  }: IconProps) => {
+  }: IconProps) {
     const [svgContent, setSvgContent] = useState<string>('');
 
   useEffect(() => {

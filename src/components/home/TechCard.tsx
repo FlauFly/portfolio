@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Icon } from "../Icon";
+import Icon from "../Icon";
 
 const Container = styled.span`
     display: flex;

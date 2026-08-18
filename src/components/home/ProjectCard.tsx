@@ -35,7 +35,7 @@ export default function ProjectCard({name, description, techStack}: ProjectCardP
             <Title>{name}</Title>
             <Description>{description}</Description>
             <TechStack>
-                {techStack.map(item => <TechCard name={item} />)}
+                {techStack.map(item => <TechCard key={item} name={item} />)}
             </TechStack>
         </Container>
     )

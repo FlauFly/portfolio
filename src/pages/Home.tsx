@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import ProjectCard from '../components/home/ProjectCard.tsx'
-import { Icon } from "../components/Icon.tsx";
-
 
 const Title = styled.h1`
     color: var(--color-primary);
