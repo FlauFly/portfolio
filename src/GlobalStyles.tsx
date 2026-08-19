@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
         /* Colors */
         --color-primary: #FF004D;
         --color-primary-dark: #7E2553;
+        --color-primary-light: #FF77A8;
         --color-secondary: #29ADFF;
         --color-secondary-dark: #1D2B53;
         --color-tertiary: #00E436;
@@ -26,6 +27,7 @@ const GlobalStyles = createGlobalStyle`
         --space-base: 1rem;
         --space-md: 1.5rem;
         --space-lg: 2rem;
+        --space-xl: 2.5rem;
 
         /* Border radius */
         --radius-sm: 0.6rem;

@@ -10,11 +10,41 @@ const Container = styled.div`
     padding: var(--space-sm);
     border-radius: var(--radius-base);
     box-shadow: 3px 3px var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+
+    @media screen and (width >= 768px) {
+        flex-direction: row;
+    }
+`
+
+const Illustration = styled.div`
+    width: 100%;
+
+    @media screen and (width >= 768px) {
+        width: 35%;
+    }
+`
+
+const Information = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+const Header = styled.div`
+    display: flex;
+    align-items: center;
+    gap: var(--space-base);
 `
 
 const Title = styled.h2`
     color: var(--color-primary);
     font-size: var(--text-md);
+`
+
+const Icons = styled.span`
+    display: flex;
 `
 
 const IconLink = styled.a`
@@ -32,7 +62,9 @@ const Description = styled.p`
 
 const TechStack = styled.div`
     display: flex;
+    flex-wrap: wrap;
     gap: var(--space-sm);
+    margin-top: auto;
 `
 
 interface ProjectCardProps {
@@ -54,18 +86,26 @@ export default function ProjectCard({
     }: ProjectCardProps) {
     return (        
         <Container>
-            <Image name={illustration} width={'40%'} />
-            <Title>{name}</Title>
-            <IconLink href={homeAddress}>
-                {homeAddress && <Icon name={"home"} size={36} />}    
-            </IconLink>
-            <IconLink href={githubAddress}>
-                {githubAddress && <Icon name={"github"} size={36} />}    
-            </IconLink>
-            <Description>{description}</Description>
-            <TechStack>
-                {techStack.map(item => <TechCard key={item} name={item} />)}
-            </TechStack>
+            <Illustration>
+                <Image name={illustration} />
+            </Illustration>
+            <Information>
+                <Header>
+                    <Title>{name}</Title>
+                    <Icons>
+                        <IconLink href={homeAddress}>
+                            {homeAddress && <Icon name={"home"} />}    
+                        </IconLink>
+                        <IconLink href={githubAddress}>
+                            {githubAddress && <Icon name={"github"} />}    
+                        </IconLink>
+                    </Icons>
+                </Header>
+                <Description>{description}</Description>
+                <TechStack>
+                    {techStack.map(item => <TechCard key={item} name={item} />)}
+                </TechStack>
+            </Information>
         </Container>
     )
 }
