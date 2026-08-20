@@ -1,22 +1,35 @@
 import styled from 'styled-components';
 import ProjectCard from '../components/home/ProjectCard.tsx'
 import HeroSection from "../components/home/HeroSection.tsx";
+import Icon from '../components/Icon.tsx';
 
 const Title = styled.h1`
     text-align: center;
+    margin: var(--space-md);
+    color: var(--color-primary-dark);
 `
 
 const Footer = styled.footer`
     margin-top: var(--space-xl);
-    border-top: 2px dotted var(--color-primary-dark);
-    background-color: var(--color-primary-light);
+    border-top: 2px solid var(--color-primary-dark);
     padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-primary-light);
+`
+
+const ContactLine = styled.span`
+    display: flex;
+    gap: var(--space-base);
+    align-items: center;
+`
+
+const IconLink = styled.a`
+    color: var(--color-primary-dark);
 `
 
 export default function Home() {
     return (
         <>
-            <Title>Portfolio</Title>
+            <Title>Portfolio - Wojciech Kowalski</Title>
             <HeroSection />
             <ProjectCard
                 name={"Personal website"}
@@ -43,6 +56,16 @@ export default function Home() {
             />
             <Footer>
                 <h2>Contact me:</h2>
+                <ContactLine>
+                    <IconLink href='mailto:tirhhe@gmail.com'>
+                        <Icon name='mail' size={48} />
+                    </IconLink>
+                    <span>tirhhe@gmail.com</span>
+                </ContactLine>
+                <ContactLine>
+                    <Icon name='phone' size={48} color='var(--color-primary-dark)' />
+                    <span>+48 609 883 977</span>
+                </ContactLine>
             </Footer>      
         </>
     );

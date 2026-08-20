@@ -4,7 +4,7 @@ import me from '../../assets/images/me.jpg'
 
 const Container = styled.section`
     width: 100%;
-    margin: 100px 0;
+    margin: var(--space-xl) 0;
     position: relative;
     z-index: 0;
 
@@ -53,7 +53,7 @@ const Text = styled.p`
     font-size: var(--text-lg);
     max-width: 60ch;
     text-align: center;
-    padding: var(--space-lg) 0;
+    padding: var(--space-xl) 0;
 `
 
 const TechGallery = styled.div`
@@ -84,7 +84,8 @@ export default function HeroSection() {
         'flask',
         'numpy',
         'pandas',
-        'git'
+        'git',
+        'github'
     ];
 
     return (

@@ -21,6 +21,10 @@ const GlobalStyles = createGlobalStyle`
         --text-md: 1.25rem;
         --text-lg: 1.5rem;
 
+        /* Fonts */
+        --font-headings: "Outfit", sans-serif;
+        --font-body: "Fraunces", serif;
+
         /* Spacing */
         --space-xs: 0.25rem;
         --space-sm: 0.5rem;
@@ -38,6 +42,19 @@ const GlobalStyles = createGlobalStyle`
     body {
         background-color: var(--color-background);
         color: var(--color-text);
+    }
+
+    h1, h2, h3, h4 {
+        font-family: var(--font-headings);
+    }
+
+    h2 {
+        font-size: var(--text-lg);
+    }
+
+    p, div, span {
+        font-family: var(--font-body);
+        font-size: var(--text-md);
     }
 `
 

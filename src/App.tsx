@@ -20,7 +20,7 @@ export default function App() {
 
 const NavBar = styled.nav`
   text-align: center;
-  font-size: var(--text-lg);
+  font-size: var(--text-md);
   width: 50vw;
   border: 2px solid var(--color-primary);
   border-radius: var(--radius-base);

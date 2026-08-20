@@ -40,7 +40,6 @@ const Header = styled.div`
 
 const Title = styled.h2`
     color: var(--color-primary);
-    font-size: var(--text-md);
 `
 
 const Icons = styled.span`
@@ -58,6 +57,7 @@ const IconLink = styled.a`
 
 const Description = styled.p`
     color: var(--color-text);
+    margin-bottom: var(--space-base);
 `
 
 const TechStack = styled.div`
