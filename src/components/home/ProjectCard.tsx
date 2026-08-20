@@ -44,6 +44,7 @@ const Title = styled.h2`
 
 const Icons = styled.span`
     display: flex;
+    gap: var(--space-sm);
 `
 
 const IconLink = styled.a`
