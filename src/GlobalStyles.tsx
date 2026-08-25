@@ -14,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
         --color-text: #000000;
         --color-white: #FFF1E8;
         --color-gray: #C2C3C7;
+        --color-gray-dark: #5F574F;
 
         /* Typography */
         --text-sm: 0.85rem;
@@ -42,6 +43,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         background-color: var(--color-background);
         color: var(--color-text);
+        margin: 0;
     }
 
     h1, h2, h3, h4 {
