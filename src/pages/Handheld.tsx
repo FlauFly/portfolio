@@ -4,7 +4,7 @@ const Main = styled.main`
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 66px);
+    min-height: calc(100lvh - 66px);
     overflow-y: hidden;
 `
 
