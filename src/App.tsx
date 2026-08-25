@@ -7,7 +7,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <NavBar>
-        <StyledNavLink to="/">Home</StyledNavLink>
+        <StyledNavLink to="/">Regular</StyledNavLink>
         <StyledNavLink to="/handheld">Handheld</StyledNavLink>
       </NavBar>
       <Routes>
@@ -21,12 +21,16 @@ export default function App() {
 const NavBar = styled.nav`
   text-align: center;
   font-size: var(--text-md);
-  width: 50vw;
   border: 2px solid var(--color-primary);
   border-radius: var(--radius-base);
   margin: var(--space-sm) auto;
   display: flex;
   justify-content: center;
+  width: 60vw;
+
+  @media screen and (width >= 640px) {
+    width: 50vw;
+  }
 `
 
 const StyledNavLink = styled(NavLink)`
