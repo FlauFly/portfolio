@@ -1,5 +1,11 @@
+import styled from "styled-components";
+
+const Console = styled.section`
+    background-color: var(--color-primary);
+`
+
 export default function Handheld() {
     return (
-        <h1>Handheld</h1>
+        <Console>Hello</Console>
     );
 }

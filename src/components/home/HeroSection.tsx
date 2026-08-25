@@ -53,20 +53,21 @@ const Text = styled.p`
     font-size: var(--text-lg);
     max-width: 60ch;
     text-align: center;
-    padding: var(--space-xl) 0;
+    padding-top: var(--space-xl);
 `
 
 const TechGallery = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--space-lg) 0;   
+    padding-bottom: var(--space-lg);
 `
 
 const IconsWrapper = styled.div`
     padding: var(--space-md) var(--space-sm);
     display: flex;
     gap: var(--space-base);
+    justify-content: center;
     flex-wrap: wrap;
 `
 
