@@ -32,14 +32,37 @@ const Screen = styled.div`
     border: 5px solid #000;
     background-color: var(--color-gray);
     border-radius: 5px;
+    z-index: 1;
 
     @media screen and (width >= 768px) {
         border-radius: 5px;
         top: 40px;
-        left: 170px;
+        left: 175px;
         width: 400px;
         height: 380px;
     }
+`
+
+const ButtonA = styled.button`
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    border: 5px solid var(--color-secondary-dark);
+    width: 50px;
+    height: 50px;
+    bottom: 120px;
+    right: 40px;
+`
+
+const ButtonB = styled.button`
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    border: 5px solid var(--color-secondary-dark);
+    width: 50px;
+    height: 50px;
+    bottom: 80px;
+    right: 100px;
 `
 
 export default function Handheld() {
@@ -47,6 +70,8 @@ export default function Handheld() {
         <Main>
             <Console>
                 <Screen></Screen>
+                <ButtonA></ButtonA>
+                <ButtonB></ButtonB>
             </Console>
         </Main>
     );
