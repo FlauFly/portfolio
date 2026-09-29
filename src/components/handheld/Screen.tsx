@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import Image from "../Image";
+import Menu from "./Menu";
+import { projectsList } from "../../data";
 
 const Container = styled.section`
   position: absolute;
@@ -32,15 +34,22 @@ const Illustration = styled.div`
 interface ScreenProps {
   name: string;
   illustration: string;
+  tab: string;
 }
 
-export default function Screen({ name, illustration }: ScreenProps) {
+export default function Screen({ name, illustration, tab }: ScreenProps) {
   return (
     <Container>
-      <Name>{name}</Name>
-      <Illustration>
-        <Image name={illustration} />
-      </Illustration>
+      {tab === "menu" && <Menu />}
+
+      {tab === "card" && (
+        <>
+          <Name>{name}</Name>
+          <Illustration>
+            <Image name={illustration} />
+          </Illustration>
+        </>
+      )}
     </Container>
   );
 }

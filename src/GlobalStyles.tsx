@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
         --color-secondary: #29ADFF;
         --color-secondary-dark: #1D2B53;
         --color-tertiary: #00E436;
+        --color-tertiary-dark: #008751;
         --color-background: #FFCCAA;
         --color-text: #000000;
         --color-white: #FFF1E8;
@@ -58,6 +59,6 @@ const GlobalStyles = createGlobalStyle`
         font-family: var(--font-body);
         font-size: var(--text-md);
     }
-`
+`;
 
 export default GlobalStyles;

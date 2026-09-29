@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Image from "../components/Image";
 import Screen from "../components/handheld/Screen";
+import { projectsList } from "../data";
 
 import { useState } from "react";
 
@@ -81,12 +82,13 @@ const ButtonDown = styled(DPadButton)`
 `;
 
 export default function Handheld() {
-  const projectsList = [
-    { name: "Personal Website", illustration: "digital-garden" },
-    { name: "Philosophy Map", illustration: "philosophy-map" },
-    { name: "Chess API", illustration: "chess-api" },
-  ];
   const [index, setIndex] = useState(0);
+  {
+    /* horizontal = left, center, right; vertical = up, bottom */
+  }
+  const [horizontal, setHorizontal] = useState("center");
+  const [vertical, setVertical] = useState("top");
+  const [tab, setTab] = useState("menu");
 
   function handleRight() {
     setIndex((index + 1) % projectsList.length);
@@ -101,7 +103,11 @@ export default function Handheld() {
   return (
     <Main>
       <Console>
-        <Screen name={project.name} illustration={project.illustration} />
+        <Screen
+          name={project.name}
+          illustration={project.illustration}
+          tab="menu"
+        />
         <DPad>
           <ButtonLeft onClick={handleLeft}>
             <Image name="arrow" />
