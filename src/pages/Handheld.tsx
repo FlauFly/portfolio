@@ -90,12 +90,28 @@ export default function Handheld() {
   const [vertical, setVertical] = useState("top");
   const [tab, setTab] = useState("menu");
 
-  function handleRight() {
-    setIndex((index + 1) % projectsList.length);
+  function handleUp() {
+    if (tab === "menu") {
+      setIndex((index - 1 + projectsList.length) % projectsList.length);
+    }
   }
 
-  function handleLeft() {
-    setIndex((index - 1 + projectsList.length) % projectsList.length);
+  function handleDown() {
+    if (tab === "menu") {
+      setIndex((index + 1) % projectsList.length);
+    }
+  }
+
+  function handleButtonA() {
+    if (tab === "menu") {
+      setTab("card");
+    }
+  }
+
+  function handleButtonB() {
+    if (tab === "card") {
+      setTab("menu");
+    }
   }
 
   let project = projectsList[index];
@@ -106,24 +122,24 @@ export default function Handheld() {
         <Screen
           name={project.name}
           illustration={project.illustration}
-          tab="menu"
+          tab={tab}
         />
         <DPad>
-          <ButtonLeft onClick={handleLeft}>
+          <ButtonLeft>
             <Image name="arrow" />
           </ButtonLeft>
-          <ButtonUp>
+          <ButtonUp onClick={handleUp}>
             <Image name="arrow" />
           </ButtonUp>
-          <ButtonDown>
+          <ButtonDown onClick={handleDown}>
             <Image name="arrow" />
           </ButtonDown>
-          <ButtonRight onClick={handleRight}>
+          <ButtonRight>
             <Image name="arrow" />
           </ButtonRight>
         </DPad>
-        <ButtonA>A</ButtonA>
-        <ButtonB>B</ButtonB>
+        <ButtonA onClick={handleButtonA}>A</ButtonA>
+        <ButtonB onClick={handleButtonB}>B</ButtonB>
       </Console>
     </Main>
   );

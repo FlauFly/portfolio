@@ -12,17 +12,28 @@ const List = styled.ul`
   height: 100%;
 `;
 
-const Project = styled.li`
-  background-color: var(--color-tertiary-dark);
+const Project = styled.li<{ isActivated: boolean }>`
+  background-color: ${(props) =>
+    props.isActivated ? "var(--color-tertiary)" : "var(--color-tertiary-dark)"};
+  box-shadow: ${(props) =>
+    props.isActivated
+      ? "10px 10px var(--color-text)"
+      : "5px 5px var(--color-text)"};
+  translate: ${(props) => (props.isActivated ? "-5px -5px" : "none")};
   padding: 10px;
   text-align: center;
+  transition: all 0.3s ease;
 `;
 
-export default function Menu() {
+interface MenuProps {
+  name: string;
+}
+
+export default function Menu({ name }: MenuProps) {
   return (
     <List>
       {projectsList.map((project) => (
-        <Project>{project.name}</Project>
+        <Project isActivated={project.name === name}>{project.name}</Project>
       ))}
     </List>
   );

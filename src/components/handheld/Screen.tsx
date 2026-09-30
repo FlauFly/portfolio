@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Image from "../Image";
 import Menu from "./Menu";
+import Card from "./Card";
 import { projectsList } from "../../data";
 
 const Container = styled.section`
@@ -23,14 +23,6 @@ const Container = styled.section`
   }
 `;
 
-const Name = styled.h2`
-  text-align: center;
-`;
-
-const Illustration = styled.div`
-  width: 100%;
-`;
-
 interface ScreenProps {
   name: string;
   illustration: string;
@@ -40,16 +32,9 @@ interface ScreenProps {
 export default function Screen({ name, illustration, tab }: ScreenProps) {
   return (
     <Container>
-      {tab === "menu" && <Menu />}
+      {tab === "menu" && <Menu name={name} />}
 
-      {tab === "card" && (
-        <>
-          <Name>{name}</Name>
-          <Illustration>
-            <Image name={illustration} />
-          </Illustration>
-        </>
-      )}
+      {tab === "card" && <Card name={name} illustration={illustration} />}
     </Container>
   );
 }
