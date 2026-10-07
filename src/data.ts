@@ -11,9 +11,9 @@ export const projectsList = [
   {
     name: "Handheld Portfolio",
     illustration: "handheld",
-    homeAddress: "https://portfolio.flaufly.com/handheld",
+    homeAddress: "https://portfolio.flaufly.com",
     githubAddress: "https://github.com/FlauFly/portfolio",
-    description: "Handheld mode of this portfolio",
+    description: "Handheld mode of this portfolio itself.",
     techStack: ["typescript", "react"],
   },
   {
