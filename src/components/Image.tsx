@@ -24,7 +24,7 @@ export default function Image({
   alt = "",
   width = "100%",
   height = "auto",
-  opacity = "1",
+  opacity = 1,
   className = "",
 }: ImageProps) {
   const [src, setSrc] = useState<string>("");
