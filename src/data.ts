@@ -9,6 +9,14 @@ export const projectsList = [
     techStack: ["javascript", "typescript", "astro"],
   },
   {
+    name: "Handheld Portfolio",
+    illustration: "handheld",
+    homeAddress: "https://portfolio.flaufly.com/handheld",
+    githubAddress: "https://github.com/FlauFly/portfolio",
+    description: "Handheld mode of this portfolio",
+    techStack: ["typescript", "react"],
+  },
+  {
     name: "Philosophy Map",
     illustration: "philosophy-map",
     homeAddress: "https://philosophy-map.flaufly.com/",
