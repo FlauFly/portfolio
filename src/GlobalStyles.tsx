@@ -19,7 +19,7 @@ const GlobalStyles = createGlobalStyle`
 
         /* Typography */
         --text-sm: 0.85rem;
-        --text-base: 1re;
+        --text-base: 1rem;
         --text-md: 1.25rem;
         --text-lg: 1.5rem;
 

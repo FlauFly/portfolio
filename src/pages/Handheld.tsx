@@ -82,29 +82,76 @@ const ButtonDown = styled(DPadButton)`
 `;
 
 export default function Handheld() {
-  const [index, setIndex] = useState(0);
-  {
-    /* horizontal = left, center, right; vertical = up, bottom */
-  }
-  const [horizontal, setHorizontal] = useState("center");
-  const [vertical, setVertical] = useState("top");
+  const verticalPositions = ["top", "middle-top", "middle-bottom", "bottom"];
+  const horizontalPositions = ["left", "right"];
+
+  const [projectIndex, setProjectIndex] = useState(0);
   const [tab, setTab] = useState("menu");
+  const [vertical, setVertical] = useState(0);
+  const [horizontal, setHorizontal] = useState(0);
+
+  let project = projectsList[projectIndex];
 
   function handleUp() {
     if (tab === "menu") {
-      setIndex((index - 1 + projectsList.length) % projectsList.length);
+      setProjectIndex(
+        (projectIndex - 1 + projectsList.length) % projectsList.length,
+      );
+    }
+    if (tab === "card") {
+      setVertical(
+        (vertical - 1 + verticalPositions.length) % verticalPositions.length,
+      );
     }
   }
 
   function handleDown() {
     if (tab === "menu") {
-      setIndex((index + 1) % projectsList.length);
+      setProjectIndex((projectIndex + 1) % projectsList.length);
+    }
+    if (tab === "card") {
+      setVertical((vertical + 1) % verticalPositions.length);
+    }
+  }
+
+  function handleLeft() {
+    if (tab === "card") {
+      setHorizontal(
+        (horizontal - 1 + horizontalPositions.length) %
+          horizontalPositions.length,
+      );
+    }
+  }
+
+  function handleRight() {
+    if (tab === "card") {
+      setHorizontal((horizontal + 1) % horizontalPositions.length);
     }
   }
 
   function handleButtonA() {
     if (tab === "menu") {
       setTab("card");
+    } else {
+      if (verticalPositions[vertical] === "top") {
+        setTab("menu");
+      }
+      if (verticalPositions[vertical] === "bottom") {
+        if (horizontalPositions[horizontal] === "left") {
+          setProjectIndex(
+            (projectIndex - 1 + projectsList.length) % projectsList.length,
+          );
+        } else {
+          setProjectIndex((projectIndex + 1) % projectsList.length);
+        }
+      }
+      if (verticalPositions[vertical] === "middle-bottom") {
+        if (horizontalPositions[horizontal] === "left") {
+          window.open(project.homeAddress, "_blank");
+        } else {
+          window.open(project.githubAddress, "_blank");
+        }
+      }
     }
   }
 
@@ -114,8 +161,6 @@ export default function Handheld() {
     }
   }
 
-  let project = projectsList[index];
-
   return (
     <Main>
       <Console>
@@ -123,9 +168,11 @@ export default function Handheld() {
           name={project.name}
           illustration={project.illustration}
           tab={tab}
+          horizontal={horizontalPositions[horizontal]}
+          vertical={verticalPositions[vertical]}
         />
         <DPad>
-          <ButtonLeft>
+          <ButtonLeft onClick={handleLeft}>
             <Image name="arrow" />
           </ButtonLeft>
           <ButtonUp onClick={handleUp}>
@@ -134,7 +181,7 @@ export default function Handheld() {
           <ButtonDown onClick={handleDown}>
             <Image name="arrow" />
           </ButtonDown>
-          <ButtonRight>
+          <ButtonRight onClick={handleRight}>
             <Image name="arrow" />
           </ButtonRight>
         </DPad>

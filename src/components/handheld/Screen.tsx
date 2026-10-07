@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Menu from "./Menu";
 import Card from "./Card";
-import { projectsList } from "../../data";
 
 const Container = styled.section`
   position: absolute;
@@ -27,14 +26,29 @@ interface ScreenProps {
   name: string;
   illustration: string;
   tab: string;
+  horizontal: string;
+  vertical: string;
 }
 
-export default function Screen({ name, illustration, tab }: ScreenProps) {
+export default function Screen({
+  name,
+  illustration,
+  tab,
+  horizontal,
+  vertical,
+}: ScreenProps) {
   return (
     <Container>
       {tab === "menu" && <Menu name={name} />}
 
-      {tab === "card" && <Card name={name} illustration={illustration} />}
+      {tab === "card" && (
+        <Card
+          name={name}
+          illustration={illustration}
+          horizontal={horizontal}
+          vertical={vertical}
+        />
+      )}
     </Container>
   );
 }
