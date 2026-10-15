@@ -5,7 +5,7 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
   list-style: none;
-  margin: 10px;
+  margin-inline: 10px;
   padding: 0;
   gap: 20px;
   justify-content: center;
@@ -22,7 +22,11 @@ const Project = styled.li<{ isActivated: boolean }>`
   translate: ${(props) => (props.isActivated ? "-5px -5px" : "none")};
   padding: 10px;
   text-align: center;
-  transition: all 0.3s ease;
+  font-size: var(--text-base);
+
+  @media screen and (width >= 768px) {
+    font-size: var(--text-lg);
+  }
 `;
 
 interface MenuProps {

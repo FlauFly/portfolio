@@ -12,7 +12,7 @@ const BackIcon = styled.section<{ isActivated: boolean }>`
 `;
 
 const Illustration = styled.div<{ isActivated: boolean }>`
-  width: ${(props) => (props.isActivated ? "94%" : "100%")};
+  width: 94%;
   position: relative;
   max-width: fit-content;
   margin-inline: auto;
@@ -53,7 +53,7 @@ const LinkIcons = styled.div`
 `;
 
 const LinkIcon = styled.a<{ isActivated: boolean }>`
-  max-height: ${(props) => (props.isActivated ? "44px" : "36px")};
+  max-height: ${(props) => (props.isActivated ? "36px" : "24px")};
   color: ${(props) =>
     props.isActivated
       ? "var(--color-secondary-dark)"
@@ -115,7 +115,7 @@ export default function Card({
   return (
     <>
       <BackIcon isActivated={vertical === "top"}>
-        <Icon name="back" />
+        <Icon name="back" size={24} />
       </BackIcon>
       <TechStack>
         {project.techStack.map((tech) => (
@@ -137,13 +137,13 @@ export default function Card({
           isActivated={vertical === "middle-bottom" && horizontal === "left"}
           href={project.homeAddress}
         >
-          <Icon name="home" />
+          <Icon name="home" size={24} />
         </LinkIcon>
         <LinkIcon
           isActivated={vertical === "middle-bottom" && horizontal === "right"}
           href={project.githubAddress}
         >
-          <Icon name="github" />
+          <Icon name="github" size={24} />
         </LinkIcon>
       </LinkIcons>
       <Arrows>

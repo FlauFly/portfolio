@@ -1,4 +1,4 @@
-// Image.tsx - Function Declaration Style
+// Generally take images in aspect ratio 16x9 (1920×1080)
 import { useEffect, useState } from "react";
 
 interface ImageProps {
