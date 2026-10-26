@@ -37,6 +37,7 @@ export const projectsList = [
   {
     name: "Chess API",
     illustration: "chess-api",
+    homeAddress: "https://github.com/FlauFly/chess-api",
     githubAddress: "https://github.com/FlauFly/chess-api",
     description:
       "Minimalistic Flask API for checking and validating chess moves.",
