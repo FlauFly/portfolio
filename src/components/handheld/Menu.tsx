@@ -7,7 +7,7 @@ const List = styled.ul`
   list-style: none;
   margin-inline: 10px;
   padding: 0;
-  gap: 20px;
+  gap: 15px;
   justify-content: center;
   height: 100%;
 `;

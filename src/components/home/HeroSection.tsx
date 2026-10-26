@@ -78,6 +78,7 @@ export default function HeroSection() {
     "javascript",
     "typescript",
     "react",
+    "postgresql",
     "astro",
     "nextjs",
     "tailwindcss",
@@ -87,6 +88,7 @@ export default function HeroSection() {
     "pandas",
     "git",
     "github",
+    "supabase",
   ];
 
   return (

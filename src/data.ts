@@ -9,6 +9,15 @@ export const projectsList = [
     techStack: ["javascript", "typescript", "astro"],
   },
   {
+    name: "16x16 Pixel Art Boards",
+    illustration: "16x16",
+    homeAddress: "https://16x16.flaufly.com/",
+    githubAddress: "https://github.com/FlauFly/16x16",
+    description:
+      "Interactive, multi-user pixel art boards with permanent storage and live-time change.",
+    techStack: ["typescript", "react", "postgresql", "supabase"],
+  },
+  {
     name: "Handheld Portfolio",
     illustration: "handheld",
     homeAddress: "https://portfolio.flaufly.com",
