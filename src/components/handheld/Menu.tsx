@@ -7,9 +7,13 @@ const List = styled.ul`
   list-style: none;
   margin-inline: 10px;
   padding: 0;
-  gap: 15px;
+  gap: 10px;
   justify-content: center;
   height: 100%;
+
+  @media screen and (width >= 768px) {
+    gap: 15px;
+  }
 `;
 
 const Project = styled.li<{ isActivated: boolean }>`
